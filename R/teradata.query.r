@@ -1,3 +1,5 @@
+#' The teradata.query object mirroring dplyr's Query object for DBI connections
+#' 
 Teradata.Query <- R6::R6Class("Teradata.Query",
                      private = list(
                        .nrow = NULL,
@@ -18,8 +20,8 @@ Teradata.Query <- R6::R6Class("Teradata.Query",
                          print(self$con)
                        },
                        
-                       fetch = function(n = 0) {
-                         res <- sqlQuery(self$con, self$sql, n)
+                       fetch = function(n) {
+                         res <- sqlQuery(self$con, self$sql)
                          res
                        },
                        
