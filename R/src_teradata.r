@@ -1,6 +1,5 @@
 # library('teradataR') library('RODBC') library('dplyr') library(data.table) library('assertthat')
 
-# DBI for ODBC Create an ephemeral in-memory RSQLite database
 #' td.table - a R reference to Teradata table
 td.table <- function(con, table, database = "") {
   if (missing(database) || is.null(database) || nchar(database) == 0) {
